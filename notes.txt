@@ -1,0 +1,1 @@
+* New Project: `cargo new project-name`
