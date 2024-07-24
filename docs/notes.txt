@@ -1,6 +1,9 @@
 * New Project: `cargo new project-name`
-* fn: function
-* main se sentry
+* run: cargo run
+* add dependencies: cargo add depname
+* install dependency: cargo build
+* import: use depName::funcName;
+* * main se sentry
 * Macros are different than functions and identify by ! after name.
     - can generate more complex code at compile time
     - provide additional functionality over regular functions.
