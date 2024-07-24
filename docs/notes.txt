@@ -10,5 +10,11 @@
     - println! macro allows for formatted strings and variadic arguments (a variable number of arguments).
 * Formatting: println! is not just for printing plain text; it can also format strings. For example, println!("Hello, {}!", "world"); would replace {} with world.
 * crates.io, the package registry for Rust. In Rust, we often refer to packages as “crates.”
-* for dependencies for impor tor require we use
-    `use package_name::sub_pkg_name;`
+
+
+
+
+GOOD SHIT
+ Rust is an ahead-of-time compiled language, meaning you can compile a program and give the executable to someone else, and they can run it even without having Rust installed.
+
+ *  asz
