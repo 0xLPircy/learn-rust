@@ -1,1 +1,11 @@
 * New Project: `cargo new project-name`
+* fn: function
+* main se sentry
+* Macros are different than functions and identify by ! after name.
+    - can generate more complex code at compile time
+    - provide additional functionality over regular functions.
+    - println! macro allows for formatted strings and variadic arguments (a variable number of arguments).
+* Formatting: println! is not just for printing plain text; it can also format strings. For example, println!("Hello, {}!", "world"); would replace {} with world.
+* crates.io, the package registry for Rust. In Rust, we often refer to packages as “crates.”
+* for dependencies for impor tor require we use
+    `use package_name::sub_pkg_name;`
