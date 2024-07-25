@@ -10,11 +10,38 @@
     - println! macro allows for formatted strings and variadic arguments (a variable number of arguments).
 * Formatting: println! is not just for printing plain text; it can also format strings. For example, println!("Hello, {}!", "world"); would replace {} with world.
 * crates.io, the package registry for Rust. In Rust, we often refer to packages as “crates.”
-
-
+* x::y signifies y is an associated function of x
+* vars and even references are immutable by default
+    let x = 5; //immutable
+    let mut y =3; //mutable
+* new strings
+    let mut x = String::new();
+* error handler
+    .expect("err message here")
+* INPUT 
+    using read_line take the value 
+    and returns an enum result, 
+    ie of `Ok` or `Err`,
+    if err then .expect called
+* VERSIONING
+    [dependencies]
+    rand = "0.8.5"
+    // this means ^0.8.5 but below 0.9.0
+* Crates.io is where people in the Rust ecosystem post their open source Rust projects for others to use.
+* MATCH:
+    match var1.cmp(&var2) {
+        Ordering::Less => println("too small!"),
+        ...
+    }
+  Ordering is an enum of types `Less`, `Greater`, `Equal`
+- no implicit type conversion,
+* Shadowing, use same name of var for type conversion, more later
+* LOOPS
+    literally just write loop{/*codehere*/}
+    use break to break lol
+- _ as an arg is for catching any value
 
 
 GOOD SHIT
  Rust is an ahead-of-time compiled language, meaning you can compile a program and give the executable to someone else, and they can run it even without having Rust installed.
-
- *  asz
+ Pust has preset items called prelude, in https://doc.rust-lang.org/std/prelude/index.html
