@@ -5,6 +5,8 @@
 * import: use depName::funcName;
 * main se sentry
 
+* COMMENTS: 
+    - // OR /* here */
 
 * MACROS are different than functions and identify by ! after name.
     - can generate more complex code at compile time
@@ -58,7 +60,20 @@
 * LOOPS
     - literally just write loop{/*codehere*/}
     - use break to break lol
-
+    - can return value from loop using break 
+    `   let mut counter = 0;
+        let result = loop {
+            counter += 1;
+            if counter == 10 {
+                break counter * 2;
+            }
+        } `
+    - break exits current loop, return exits current function
+    - continue exists
+    - loop label: begin with a '
+        'counting_up: loop {}
+    - for NESTED, to break out of upper loop not current specify name
+        break 'counting_up;
 
 - _ as an arg is for catching any value
 
@@ -186,3 +201,35 @@ GOOD SHIT
                     x + 1 //NOTE NO SEMICOLON HERE
                 }; `
     - cant have semicolon at end warna become statements
+
+
+
+* CONDITIONALS
+    - if
+        no parentheses
+        `
+            if number < 5 {
+                println!("condition was true");
+            } else if number>3{
+               println!("condition was true2"); 
+            } else {
+                println!("condition was false");
+            }
+        ` 
+        NO: if number 
+        (not like js, that 5 is true and 0 is false, do it explicitly)
+        VALID: let number2 = if condition { 5 } else { 6 };//assigns 5 if true
+        INVALID: let number2 = if condition { 5 } else { "hi" };/
+                   COMPILE ERR //gives expected int cause 1st expression is int
+    - while
+        `while cond==ition {code}`
+    - for
+        `for element in a{code here}` //given a is an array
+        `for number in (1..4) {}` executres 1 2 3 NOT 4
+
+
+* LOGICAL OPERATORS:
+    && || != !
+
+- .rev() is a function that reverses
+    so on a range (1..4).rev() gives 321
