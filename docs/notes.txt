@@ -3,14 +3,25 @@
 * add dependencies: cargo add depname
 * install dependency: cargo build
 * import: use depName::funcName;
-* * main se sentry
-* Macros are different than functions and identify by ! after name.
+* main se sentry
+
+
+* MACROS are different than functions and identify by ! after name.
     - can generate more complex code at compile time
     - provide additional functionality over regular functions.
     - println! macro allows for formatted strings and variadic arguments (a variable number of arguments).
 * Formatting: println! is not just for printing plain text; it can also format strings. For example, println!("Hello, {}!", "world"); would replace {} with world.
-* crates.io, the package registry for Rust. In Rust, we often refer to packages as “crates.”
+
+
+* CRATES.io, the package registry for Rust. In Rust, we often refer to packages as “crates.”
 * x::y signifies y is an associated function of x
+* VERSIONING
+    [dependencies]
+    rand = "0.8.5"
+    // this means ^0.8.5 but below 0.9.0
+
+
+
 * vars and even references are immutable by default
     let x = 5; //immutable
     let mut y =3; //mutable
@@ -18,28 +29,128 @@
     let mut x = String::new();
 * error handler
     .expect("err message here")
+
+
 * INPUT 
     using read_line take the value 
     and returns an enum result, 
     ie of `Ok` or `Err`,
     if err then .expect called
-* VERSIONING
-    [dependencies]
-    rand = "0.8.5"
-    // this means ^0.8.5 but below 0.9.0
-* Crates.io is where people in the Rust ecosystem post their open source Rust projects for others to use.
+
+
 * MATCH:
-    match var1.cmp(&var2) {
-        Ordering::Less => println("too small!"),
-        ...
-    }
-  Ordering is an enum of types `Less`, `Greater`, `Equal`
+    `
+        match var1.cmp(&var2) {
+            Ordering::Less => println("too small!"),
+            ...
+        }
+    `
+    - Ordering is an enum of types `Less`, `Greater`, `Equal`
+
+
 - no implicit type conversion,
-* Shadowing, use same name of var for type conversion, more later
+
+
+* SHADOWING, use same name of var for type conversion, more later
+
+
 * LOOPS
-    literally just write loop{/*codehere*/}
-    use break to break lol
+    - literally just write loop{/*codehere*/}
+    - use break to break lol
+
+
 - _ as an arg is for catching any value
+
+
+* INT OVERFLOW
+    - compiling in release mode with the --release flag, removes checks for overflow
+    - Handling overflow explicitly
+        1. Wrapping Methods: 
+            Example in Rust: wrapping_add, wrapping_sub, wrapping_mul, etc.
+            If max value exceeded wraps to minimum value
+            `
+                let x: u8 = 255;
+                let y = x.wrapping_add(1); // y will be 0
+            `
+        2. Checked Methods:
+            Example in Rust: checked_add, checked_sub, checked_mul, etc.
+            If max value exceeded, returns `None` else `Some(result)`
+            `
+                let x: u8 = 255;
+                let y = x.checked_add(1); // y will be None because it overflows
+            `
+        3. Overflowing Methods:
+            Example in Rust: overflowing_add, overflowing_sub, overflowing_mul, etc.
+            Returns tuple of result of operation and if overflow occurred
+            `
+                let x: u8 = 255;
+                let (result, overflowed) = x.overflowing_add(1); // result will be 0, overflowed will be true
+            `
+        4. Saturating Methods:
+            Example in Rust: saturating_add, saturating_sub, saturating_mul, etc.
+            If overflowor underflow occurs, result is stopped at the max or min value respectively
+            `
+                let x: u8 = 255;
+                let y = x.saturating_add(1); // y will be 255 (maximum value for u8)
+            `
+
+
+* NUMERIC OPERATORS
+    + - * / %
+    - let truncated = -5 / 3; // Results in -1
+
+
+- char literals: single qoutes ''
+- string literals: double qoutes ""
+
+
+* SIZES
+        Length	Signed	Unsigned
+    INTEGERS 
+        8-bit	i8	    u8
+        16-bit	i16	    u16
+        32-bit	i32	    u32
+        64-bit	i64	    u64
+        128-bit	i128	u128
+        arch	isize	usize
+    FLOATS (signed)
+        32-bit  f32 (single pres)
+        64-bit  f64 (double pres, default)
+    BOOLEAN
+        8-bit   bool
+    CHAR
+        32-bit  char
+
+* COMPOUND types
+    - TUPLE (tup)
+        fixed length once declared
+        a comma-separated list of values inside parentheses
+        the types of the different values in the tuple don’t have to be the same
+        Declare:   `   let tup: (i32, f64, u8) = (500, 6.4, 1);    `
+        Use:     
+            Destructuring   `   let tup = (500, 6.4, 1);
+                                let (x, y, z) = tup;
+                                println!("The value of y is: {y}");
+                            `
+            Period  `   
+                        let x: (i32, f64, u8) = (500, 6.4, 1);
+                        let five_hundred = x.0;
+                        let six_point_four = x.1;
+                        let one = x.2;
+                    `
+        Tuples w/o value -> unit
+    - ARRAY ([types; index])
+        fixed length
+        Declare:    `   let a: [i32; 5] = [1, 2, 3, 4, 5];    `
+                    `   let a = [3; 5]; //gives 3,3,3,3,3     `
+        Use:
+            `
+                let first = a[0];
+                let second = a[1];
+            `
+        If you try to access out of bounds index, prog will panic //RUNTIME
+
+
 
 
 GOOD SHIT
