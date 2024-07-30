@@ -1,3 +1,5 @@
+***1 TO 3***
+
 * New Project: `cargo new project-name`
 * run: cargo run
 * add dependencies: cargo add depname
@@ -233,3 +235,19 @@ GOOD SHIT
 
 - .rev() is a function that reverses
     so on a range (1..4).rev() gives 321
+
+
+
+*** 4 ***
+
+* OWNERSHIP
+    - memory safety guarantees without needing a garbage collector
+    - there are set of rules which compiler checks
+        if rule not followed, no compilation
+    - stack heap, same concepts, stack is faster to store and access
+    - main purpose of ownership is to manage heap data
+
+* OWNERSHIP RULES
+    - Each value in Rust has an owner.
+    - There can only be one owner at a time.
+    - When the owner goes out of scope, the value will be dropped.
