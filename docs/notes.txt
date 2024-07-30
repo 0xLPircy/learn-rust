@@ -29,6 +29,7 @@
     let mut x = String::new();
 * error handler
     .expect("err message here")
+* snake case as the conventional style (this_is_called_snake_case)
 
 
 * INPUT 
@@ -151,8 +152,37 @@
         If you try to access out of bounds index, prog will panic //RUNTIME
 
 
-
-
 GOOD SHIT
  Rust is an ahead-of-time compiled language, meaning you can compile a program and give the executable to someone else, and they can run it even without having Rust installed.
  Pust has preset items called prelude, in https://doc.rust-lang.org/std/prelude/index.html
+
+
+
+* FUNCTIONS
+    - not like c, CAN define functions upar or neeche
+    - calling SAME as c
+    - params SAME as c but for type 
+        YES => `x: i32`
+        NO =>   `i32 x`
+    - RETURN: 
+        type after an arrow `fn func_name() -> ret_type{//code here}`
+        no return keyword just an expression (given below)
+        fn five() -> i32 {
+            5 //aisa lonely sa without semicolon is the return
+        }
+
+* STATEMENTS
+    - instructions that perform some action
+    - do NOT return a value.
+    - let, function definitions, 
+    - WRONG :` fn main() {
+                    let x = (let y = 6);
+                } `
+
+* EXPRESSIONS
+    - evaluate to a value
+    - RIGHT:`let y = {
+                    let x = 3;
+                    x + 1 //NOTE NO SEMICOLON HERE
+                }; `
+    - cant have semicolon at end warna become statements
