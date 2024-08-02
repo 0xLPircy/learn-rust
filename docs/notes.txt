@@ -261,3 +261,30 @@ GOOD SHIT
         memory at run time, String::from
         return memory when done
     -  the memory is automatically returned once the variable that owns it goes out of scope
+    - Rust calls drop automatically at the closing curly brack
+* MOVE
+    - you cant assign one string to another, like let s1 = s2; is a nope
+    - string have ptr, len and capacity, so ptr points same place when you assign
+    - causes DOUBLE FREE error, both s1 and s2 try to drop 
+    - so after s2 = s1, s1 is considered invalid
+    - any automatic copying can be assumed to be inexpensive in terms of runtime performance
+    cause auto drop of s1
+
+* CLONE
+    - used to create a copy, not just same pointing
+    -       let s1 = String::from("hello");
+            let s2 = s1.clone();
+            println!("s1 = {s1}, s2 = {s2}");
+        gives: s1 = hello, s2 = hello;
+
+* COPY
+    - this is what happens with int, or like wth clone
+    - bool, ints, float char can use
+
+* FUNCTIONS AND OWNERSHIP
+     - if i pass a string as an arg to a function, it is NO LONGER VALID
+     - let s = String::from("hello");  // s comes into scope
+        takes_ownership(s);             
+     - so if  let s = func_name();//return on func moves into s
+
+NOTE: can return multiple from func using tuples
