@@ -282,9 +282,17 @@ GOOD SHIT
     - bool, ints, float char can use
 
 * FUNCTIONS AND OWNERSHIP
-     - if i pass a string as an arg to a function, it is NO LONGER VALID
-     - let s = String::from("hello");  // s comes into scope
+    - if i pass a string as an arg to a function, it is NO LONGER VALID
+    - let s = String::from("hello");  // s comes into scope
         takes_ownership(s);             
-     - so if  let s = func_name();//return on func moves into s
+    - so if  let s = func_name();//return on func moves into s
+    - SOLUTION: reference, similar to c
+    - eg:  let len = calculate_length(&s1);
+      can still use s1 after this
+      so now the str in function is basically a pointer to s1 ka pointer
+    - BORROWING: action of creating a reference
+        cant modify it while borrowing
+    - MUTABLE REFERENCE: pass &mut s
+         let s2 = functi_name(&mut s1);
 
 NOTE: can return multiple from func using tuples
