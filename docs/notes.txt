@@ -311,5 +311,12 @@ GOOD SHIT
     - when pointer points to adress which has already been free/ dropped
     - rust ENSURES this wont happen gives COMPILATION ERROR
 
-
 NOTE: can return multiple from func using tuples
+
+
+* SLICE
+    - if we find index of soething in strig, string might drop but the int of index remains ie bad
+    - let hello = &s[0..5];
+    - let hello = &s[..5]; //same as above
+    - let hello = &s[..]; //means entire string
+    - can do this on arr of other types too
