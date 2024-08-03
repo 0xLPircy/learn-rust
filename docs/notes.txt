@@ -374,3 +374,26 @@ NOTE: can return multiple from func using tuples
     - takes ownership not reference
     - prints file and line number
     - returns ownership of the value
+
+
+* METHODS
+    - similar to funcs, args, return yadayada
+    - defined inside struct (or enum or trait) only (kinda like classes ke funcs)
+    - first param is self, ie the instance of struct on which method is called
+    - put in an impl block associated to strut name
+    - getters: method with same name as field, returns value oof field
+        here if field pvt but method public, gives read only access to field
+* ASSOCIATED FUNCTIONS
+    - all FUNCS in impl are called associated functions, 
+    - they wont have &self cause they are NOT methods, don’t need an instance of the type to work with
+    - used as constructors usually
+    - fn square(size: u32) -> Self {
+        Self {
+            width: size,
+            height: size,
+        }
+    }
+    Self here is alias for Rectangle
+    let sq = Rectangle::square(3);
+    - we use :: to call em
+- each func or method can have their own impl block
