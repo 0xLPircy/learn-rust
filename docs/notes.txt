@@ -320,3 +320,42 @@ NOTE: can return multiple from func using tuples
     - let hello = &s[..5]; //same as above
     - let hello = &s[..]; //means entire string
     - can do this on arr of other types too
+
+
+
+* STRUCTS (similar to c structs)
+    - custom data type
+    - struct Name_here {
+        active: bool,
+        username: String,
+        sign_in_count: u64, //hash im guessing
+    }
+    - define as:
+        let user1 = Name_here {
+            active: true, ...
+        };
+    - to access:
+        user1.email = ...
+    - either all fields mutable or all immutable, cant mix match
+    - can use a function to returen new istance of the struct,
+        pass values at arguments
+        (kinda like a constructor lol)
+    - use String and not &str, cause we want instance to own data
+    - 
+* field init shorthand syntax
+    - passed arg and struct field name same so just using once
+    - like in this.user = user is same as just user,
+* TUPLE STRUCTS
+    - same as tuples... but tuple cn have a name
+    -  struct Color(i32, i32, i32);
+        struct Point(i32, i32, i32);
+        fn main() {let black = Color(0, 0, 0);
+        let origin = Point(0, 0, 0);}
+    -  cant assigna point to a color now, safer
+* unit-like structs
+    - struct AlwaysEqual;
+        fn main() {
+            let subject = AlwaysEqual;
+        }
+    - when we want a trait but no data as such
+
