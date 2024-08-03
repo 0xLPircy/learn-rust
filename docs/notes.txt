@@ -290,9 +290,26 @@ GOOD SHIT
     - eg:  let len = calculate_length(&s1);
       can still use s1 after this
       so now the str in function is basically a pointer to s1 ka pointer
-    - BORROWING: action of creating a reference
-        cant modify it while borrowing
-    - MUTABLE REFERENCE: pass &mut s
-         let s2 = functi_name(&mut s1);
+* BORROWING:
+    - action of creating a reference
+    - cant modify it while borrowing
+* MUTABLE REFERENCE: 
+    - pass &mut s
+        let s2 = functi_name(&mut s1);
+    - can only have ONE mutable reference to a perticular value
+    - TWO will FAIL
+    - prevents data races (race condition)
+    - Happens when:
+        Two or more pointers access the same data at the same time.
+        At least one of the pointers is being used to write to the data.
+        There’s no mechanism being used to synchronize access to the data.
+    - Below gives cannot borrow `s` as mutable because it is also borrowed as immutable
+        let r2 = &s; // no problem
+        let r3 = &mut s; // BIG PROBLEM
+    - can do above only if scopes don’t overlap
+* DANGLING REFERENCES/ POINTERS
+    - when pointer points to adress which has already been free/ dropped
+    - rust ENSURES this wont happen gives COMPILATION ERROR
+
 
 NOTE: can return multiple from func using tuples
