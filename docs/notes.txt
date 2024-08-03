@@ -341,7 +341,7 @@ NOTE: can return multiple from func using tuples
         pass values at arguments
         (kinda like a constructor lol)
     - use String and not &str, cause we want instance to own data
-    - 
+    - structs can NOT be println directly with {varname} 
 * field init shorthand syntax
     - passed arg and struct field name same so just using once
     - like in this.user = user is same as just user,
@@ -359,3 +359,18 @@ NOTE: can return multiple from func using tuples
         }
     - when we want a trait but no data as such
 
+
+* PRINTLN formats
+    - println macro can use different formats to o/p
+    - default is Display (cant print struct)
+    - Debug o/p format:
+        We have to manually add opt to each type we want to use debug on
+        #[derive(Debug)] //add this right before struct defination
+        println!("rect1 is {rect1:?}");//tells compiler we wanna use "Debug" o/p format
+        :? prettu print in one line, 
+        :#? pretty print over few lines
+* dbg! macro (using debug too)
+    - dbg!(&rect1); 
+    - takes ownership not reference
+    - prints file and line number
+    - returns ownership of the value
