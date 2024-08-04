@@ -397,3 +397,35 @@ NOTE: can return multiple from func using tuples
     let sq = Rectangle::square(3);
     - we use :: to call em
 - each func or method can have their own impl block
+
+
+
+* ENUMS
+    - like typescript, one of the given values
+    - enum IpAddrKind {
+            V4,
+            V6,
+        }
+        let four = IpAddrKind::V4;
+    - can NOT be print with default formatter
+    - can put any kind of data inside an enum, even struct
+        enum IpAddr {
+            V4(u8, u8, u8, u8),
+            V6(String),
+        }
+    - can use IMPL for METHODS, same as structs
+    - ip ke liye enum library exists
+* Option 
+    - in std library
+    - value exists or not
+    - like checking 5th index in array, either get value or nothing
+Note: no NULL in rust
+    - enum Option<T> {
+            None,
+            Some(T),
+        }
+    - included in the prelude, no need to use Option::
+    -     let some_number = Some(5);
+            let some_char = Some('e');
+            let absent_number: Option<i32> = None;
+    - Everywhere that a value has a type that isn’t an Option<T>, you can safely assume that the value isn’t null. <3
