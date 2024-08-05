@@ -429,3 +429,22 @@ Note: no NULL in rust
             let some_char = Some('e');
             let absent_number: Option<i32> = None;
     - Everywhere that a value has a type that isn’t an Option<T>, you can safely assume that the value isn’t null. <3
+
+
+* MATCH CONTROL FLOW CONSTRUCT
+    - compare value against patterns
+    - Exits out if any condition matches, NOT like switch
+    - match var1 {
+        var2 => {code to execute} //condition need not be bool
+        var3 => {code to execute}
+    }
+    - if var1 == var2 or var1 == var 3 code executed
+    - what is the struct of the match, what is returning and what are we matching (?)
+    - match x {
+        6 =>1,
+        0_u32..=5_u32 | 7_u32..=u32::MAX => todo!() //to ensure no case left
+        }
+    - exhaustive: ALL possibilities MUST be covered
+    - use `other` or `_` to be exhaustive (at end ofc)
+* todo!() macro
+    - cause the program to panic with a message indicating that this part of the code is not done yet.
