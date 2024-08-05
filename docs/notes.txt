@@ -458,3 +458,20 @@ Note: no NULL in rust
         } else {
             println!("The value is None");
         }
+
+
+
+* MANAGING BIG PROJECTS
+    - Packages: A Cargo feature that lets you build, test, and share crates
+    - Crates: A tree of modules that produces a library or executable
+    - Modules and use: Let you control the organization, scope, and privacy of paths
+    - Paths: A way of naming an item, such as a struct, function, or module
+* PACKAGES AND CRATES
+    - crates can be a 
+        binary crate: can compile to executable, ie binary, must have main
+        library crate: no main, dont compile to executable
+    - crate root: makes up the root module of crate
+    - package: bundle of crates
+        contains a Cargo.toml: tells how to build the crates
+        can have n number of binary crates, but only ONE library crate
+    - src/lib.rs: means library crate, place files in src/bin
