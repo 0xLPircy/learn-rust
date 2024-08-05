@@ -448,3 +448,13 @@ Note: no NULL in rust
     - use `other` or `_` to be exhaustive (at end ofc)
 * todo!() macro
     - cause the program to panic with a message indicating that this part of the code is not done yet.
+
+
+* IF LET
+    -  let some_value = Some(5);
+        // Using `if let` to check if `some_value` is `Some` and extract the value
+        if let Some(x) = some_value {
+            println!("The value is: {}", x);
+        } else {
+            println!("The value is None");
+        }
