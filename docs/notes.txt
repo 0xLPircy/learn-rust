@@ -475,3 +475,14 @@ Note: no NULL in rust
         contains a Cargo.toml: tells how to build the crates
         can have n number of binary crates, but only ONE library crate
     - src/lib.rs: means library crate, place files in src/bin
+
+* MODULES, CONTROL SCOPE AND privacy
+    - when declaring new module with  `mod garden`
+        - compiler looks for code in: {} or src/garden.rs or src/garden/mod.rs
+        - can do submodules, will look in: {} or src/garden/vegetables.rs or src/garden/vegetables/mod.rs
+        - once a module is in a crate, can be accessed from anywhere
+    - pvt vs public
+        - pvt by default (even by parent module)
+        - pub mod name_here for public ones
+    - why modules? organization, privacy
+    - same parent sibling etc as classes
