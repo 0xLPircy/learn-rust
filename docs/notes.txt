@@ -486,3 +486,19 @@ Note: no NULL in rust
         - pub mod name_here for public ones
     - why modules? organization, privacy
     - same parent sibling etc as classes
+* PATH to MODULES
+    - same, absolute or relative both work
+    - :: between each
+
+
+7.3-7.5 todo
+
+
+* COLLECTIONS
+    - stored in heap, so dynamicish
+* VECTOR
+    - values store done after but variable length
+* STRING 
+    - charssss
+* HASH MAP
+    - value to key, MAP
