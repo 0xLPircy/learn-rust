@@ -498,6 +498,20 @@ Note: no NULL in rust
     - stored in heap, so dynamicish
 * VECTOR
     - values store done after but variable length
+    - Vec<T>
+    - value sof same type only
+    - `let v: Vec<i32> = Vec::new();` 
+    - vec! macro, holds the values you give it.
+        let v = vec![1, 2, 3];
+    - updating a vector
+        let mut v = Vec::new();
+        v.push(5);
+        v.push(6);
+        v.push(7);
+        v.push(8);
+    - reading via indexing or by `get`
+        //check projects folder
+
 * STRING 
     - charssss
 * HASH MAP
