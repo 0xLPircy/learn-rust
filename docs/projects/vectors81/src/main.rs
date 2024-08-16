@@ -45,5 +45,5 @@ fn main() {
         SpreadsheetCell::Int(3),
         SpreadsheetCell::Text(String::from("blue")),
         SpreadsheetCell::Float(10.12)
-    ]
+    ];
 }

@@ -531,7 +531,63 @@ Note: no NULL in rust
         forces match usage, ensureing all edge cases handled
     - dropped when out of scope, nothig new
 
-* STRING 
+* STRING (NOT string literal)
     - charssss
+    - let mut s = String::new();
+    - makes the literal a string
+        let s = "some text qualifies at str literal".to_string();
+            OR
+        let s = String::from("some text qualifies at str literal");
+    - concatenate
+        +
+        let s1 = String::from("Hello ");
+        let s2 = String::from("World!");
+        let s3 = s1 + &s2; //s1 ownership gone, s2 was reffered so stll can be used
+            WHY? fn add(self, s: &str) -> String {},
+                looks like this, meaning, 1st will always be lost and 2nd always refer
+                can only add &str to String, NOT String to String
+            &String can act as &str
+        for more: s = s1 + &s2 + &s3;
+        OR
+        format! macro
+        let s = format!("{s1}-{s2}-{s3}"); //doesnt print just returns
+        does NOT take ownership
+    - append
+      STR LITERAL
+        s.push_str("more text");
+        //s NEEDS to be mutable
+        // push str doesnt take ownership of literal, ie: copies, doesnt move
+        let s2 = "bar";
+        s.push_str(s2);
+        println!("{s2}"); //CAN still use s2
+      SINGLE CHAR
+        s.push("w");
+    - can NOT use INDEXING to access char of a string
+    - HOW RUST STORES strings
+        String is a wrapper of Vec<u8>
+        "Hola" is 4 bytes, 1 each when utf-8 encoded
+        "Здравствуйте" is 24 bytes, 2 each when utf-8 encoded
+        HENCE index cant work.
+        DIFF SCRIPT todo
+    - slicing
+       let hello = "Здравствуйте";
+       let s = hello[0..4];
+       //s will be a &str pointing to first 4 bytes, NOT indexes, bytes
+       // ie: "Зд"
+       //if we tried to break pairs of the above, PANICCC
+    - iterate
+      using char()
+        for c in "Зд".chars() {
+            println!("{c}");
+        } 
+        //gives: З д
+      using bytes()
+        for c in "Зд".bytes() {
+            println!("{c}");
+        }
+        //gives: 208 151 208 180
+
+
+
 * HASH MAP
     - value to key, MAP
