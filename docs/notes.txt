@@ -511,6 +511,25 @@ Note: no NULL in rust
         v.push(8);
     - reading via indexing or by `get`
         //check projects folder
+        `
+            let third: &i32 = &v[2]; //same as c
+            let third: Option<&i32> = v.get(2); //ew but okay
+        `
+    - cant unmut refer one index and then try to add at end.
+        Why? Memore next to each other, if new element require all to be relocated, pehle ke reference will panic
+    - Iteration: i in reference to 0th
+        immutable:   for i in &v {
+                        println!("{i}");
+                    }
+        mutable: for i in &mut v{
+                    *I +=50;
+                }
+        DOESNT allow overall changes to vector in for loop due to same reason
+    - VECTOR OF ENUMS
+        solves issue of one type only
+        //check project
+        forces match usage, ensureing all edge cases handled
+    - dropped when out of scope, nothig new
 
 * STRING 
     - charssss
