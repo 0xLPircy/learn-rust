@@ -587,7 +587,48 @@ Note: no NULL in rust
         }
         //gives: 208 151 208 180
 
-
+NOTE: STR vs STRING (?)
+STR is binery, no need to allocate mempry, known at compiletime
+STRING in heap, dont know etc etc
 
 * HASH MAP
     - value to key, MAP
+    - HashMap<K, V>
+        key type K and value type V
+    - DECLARE: 
+        `let mut scores = HashMap::new();`
+    - ADD:  
+        `scores.insert(String::from("Blue"), 12);`
+    - no built in macro to handle, ie less support
+    - store stuff in heap
+    - all keys of same type, all vals of same type
+    - ACCESS Value: 
+        ` let score = scores.get(&team_name).copied().unwrap_or(0);
+        //check project `
+    - ITERATE
+        `
+        for (key, value) in &scores {
+            println!("{key}: {value}");
+        }    
+        `
+    - Ownership rules
+        for types that are copied copy for own own, example i32 ans string respectively
+        if we do
+            scores.insert(team_name, team_value);
+        team_name and value are goe now, map owns them
+        if we use references then all GOOD
+    - key unique, one val associated at a time
+    - OVERWRITE
+        insert with same key 2nd time, will be overwritten
+    - ADD key val only if doesnt already exist
+        special thingi called ENTRY used
+        `
+            scores.entry(String::from("Yellow")).or_insert(50);
+        `
+        if Yellow exist nothing happens else added
+    - UPDATE val based on old val
+        //check project
+        uses pointer to the value
+    - PRINT     println!("{map:?}"); (?) works???
+    - OTHER TYPES OF HASHERS EXIST, we are using Siphash, safe but slow
+    
