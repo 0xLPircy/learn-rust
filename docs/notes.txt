@@ -632,3 +632,32 @@ STRING in heap, dont know etc etc
     - PRINT     println!("{map:?}"); (?) works???
     - OTHER TYPES OF HASHERS EXIST, we are using Siphash, safe but slow
     
+
+*ERROR HANDLING
+    - it wont compile we are cool yada yada
+    - TWO types 
+        Recoverable: 
+            eg file not found, retry
+            use Result<T, E>
+        Unrecoverable: 
+            symptoms of bugs, access nonexisting array index
+            use panic! macro
+    - Unrecoverable:
+        panic! macro,
+        panic occurs naturally or by the macro
+        `panic!("some message here")`
+        RUST_BACKTRACE
+            can use backtrace to find where err too
+            shows all, rust core code, crates, your code
+            set RUST_BACKTRACE = 1 (making it true and run)
+            `RUST_BACKTRACE = 1 cargoo run`
+
+(Unwinding vs aborting)
+    Unwinding: 
+        rust walks back up the stack clearning memory
+        default
+    Aborting: 
+        rust aborts, OS has to freeup the 
+        [profile.release]
+        panic = "abort" (to be added in cargo.toml)
+    
