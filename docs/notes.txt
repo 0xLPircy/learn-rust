@@ -651,6 +651,8 @@ STRING in heap, dont know etc etc
             shows all, rust core code, crates, your code
             set RUST_BACKTRACE = 1 (making it true and run)
             `RUST_BACKTRACE = 1 cargoo run`
+    - Recoverable Errors
+        
 
 (Unwinding vs aborting)
     Unwinding: 
