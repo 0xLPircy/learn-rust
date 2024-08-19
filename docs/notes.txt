@@ -652,6 +652,26 @@ STRING in heap, dont know etc etc
             set RUST_BACKTRACE = 1 (making it true and run)
             `RUST_BACKTRACE = 1 cargoo run`
     - Recoverable Errors
+        eg: opening a file gives Result<T,E> type, 
+            //check projects
+        ErrorKind Std lib, has types of error we can match
+            //check project
+        TODO:after 13 check box of unwrap_or_else
+        .unwrap() //causes panic
+        .expect("messageee") //causes panic w/t custom message
+        expect used in industry INDUSTRY
+        PROPOGATING THE ERROR
+            returning error out of function to the one calling it
+            //check project once
+            ? at end of a statement returning Result
+                if Ok, Ok ka value gets returned out of statement
+                if Err, Err returned from WHOLE function
+                if we use ?, ANY error is changed into the err type defined in return of the func
+                can CHAIN //check project
+                only use ? with return type of Result, Option or some other
+    Convert Result to Option: ok method
+    Convert Option to Result: ok_or
+    main() can return Result<(), E>
         
 
 (Unwinding vs aborting)
