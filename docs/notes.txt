@@ -672,6 +672,12 @@ STRING in heap, dont know etc etc
     Convert Result to Option: ok method
     Convert Option to Result: ok_or
     main() can return Result<(), E>
+    - When to use panic! or not
+        if code can mess up everything, use panic
+        if example, prototype, tests, use panic!
+        if you knwo more like err can never happen, okay to call panic!
+        if user input wrong, could call continue and tell user input in wrong, dont panic
+        
         
 
 (Unwinding vs aborting)
