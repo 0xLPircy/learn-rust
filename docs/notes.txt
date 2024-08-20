@@ -676,9 +676,7 @@ STRING in heap, dont know etc etc
         if code can mess up everything, use panic
         if example, prototype, tests, use panic!
         if you knwo more like err can never happen, okay to call panic!
-        if user input wrong, could call continue and tell user input in wrong, dont panic
-        
-        
+        if user input wrong, could call continue and tell user input in wrong, dont panic      
 
 (Unwinding vs aborting)
     Unwinding: 
@@ -689,3 +687,8 @@ STRING in heap, dont know etc etc
         [profile.release]
         panic = "abort" (to be added in cargo.toml)
     
+
+* GENERIC TYPES
+    - "abstract standin for concrete types"
+    - make function overloading diff of not num of args but type of args fun.
+    - 
