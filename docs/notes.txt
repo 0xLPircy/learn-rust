@@ -691,4 +691,6 @@ STRING in heap, dont know etc etc
 * GENERIC TYPES
     - "abstract standin for concrete types"
     - make function overloading diff of not num of args but type of args fun.
-    - 
+    - we know ki capital letter se sgnify hota hai
+    - Remove duplication by extracting func
+        (fancy way of saying functions use karo)
