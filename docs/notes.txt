@@ -694,3 +694,9 @@ STRING in heap, dont know etc etc
     - we know ki capital letter se sgnify hota hai
     - Remove duplication by extracting func
         (fancy way of saying functions use karo)
+    - now if we want func to take both arr of chars and arr of int, we use generics
+        `fn funcName<T>(list: &[T]) -> &T ...`
+        does NOT COMPILE
+            comparision of largest might not work for all types
+        we use TRAIT here, std::cmp:::PartialOrd trait
+            used to compare what can be passed to T, ie only comparision wale in the trait
