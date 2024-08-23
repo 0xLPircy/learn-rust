@@ -721,3 +721,25 @@ STRING in heap, dont know etc etc
                 &self.x
             }
         }
+        since point pe t is declared it means impl pe T is the same T
+        different name such at <R> would also work but convention
+        impl Point<i32> {
+            fn distance_from_origin(&self) -> f32 {
+                (self.x.powi(2) + self.y.powi(2)).sqrt()
+            }
+        }
+            here we are using only i32, so this will work only on Point ke i32 types.
+    - generics dont make anything slower
+    - Monomorphization: turning generic to specific
+        compiler does this
+        so if a <T> defination is used as i32 and f64, itll make two version of the generic into i32 and f64
+        KINDA LIKE:
+        enum Option_i32 {
+            Some(i32),
+            None
+        }
+        enum Option_f64 {
+            Some(f64),
+            None
+        }
+    Basically compiler makes all the types that were used with the generic as different declarations
