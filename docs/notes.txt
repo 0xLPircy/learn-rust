@@ -700,3 +700,24 @@ STRING in heap, dont know etc etc
             comparision of largest might not work for all types
         we use TRAIT here, std::cmp:::PartialOrd trait
             used to compare what can be passed to T, ie only comparision wale in the trait
+    - in STRUCTS
+        struct Point<T> {
+            x: T,
+            y: T
+        }
+        //this can have int or float in it now, but not x int and y float, both of same type T
+    - in ENUMS
+        enum Option<T> {
+            Some(T),
+            None
+        }
+        enum Result<T, E>{
+            Ok(T),
+            Err(E)
+        }
+    - in METHODS
+        impl<T> Point<T>{
+            fn x(&self) -> &T {
+                &self.x
+            }
+        }
