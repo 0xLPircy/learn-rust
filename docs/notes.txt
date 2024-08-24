@@ -743,3 +743,20 @@ STRING in heap, dont know etc etc
             None
         }
     Basically compiler makes all the types that were used with the generic as different declarations
+
+* TRAITS (kinda like what it sound like) (interfaces?)
+    - defines functionality the type has
+    - Trait Bounds: this type can be any which shows this behavior
+    - eg: 
+        `
+            pub trait Summary {
+                fn summarize(&self) -> String;
+            }
+            impl Summary for Tweet {
+                fn summarize(&self) -> String {
+                    format!("{}: {}", self.username, self.content)
+                }
+            }
+        `
+    - THIS IMPL IS NOT METHOD, ITS SAME SYNTAX BUT TRAIT
+    - HOW TF I STHIS DIFF FROM A METHOD (?)
