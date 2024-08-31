@@ -1,0 +1,12 @@
+w/o Cargo how to:(kinda like C)
+    - compile with `rustc filename.rs`
+    - run ./filename (running the binary of the thingi)
+
+CARGO
+    - cargo init (int he current dir)
+    - cargo new name (new folder name)
+    - cargo run (compile +run)
+    - cargo build (just compile)
+
+- Position in print format, add number of the arg and display cool //check project
+- can do named //check project
