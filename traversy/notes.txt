@@ -2,11 +2,28 @@ w/o Cargo how to:(kinda like C)
     - compile with `rustc filename.rs`
     - run ./filename (running the binary of the thingi)
 
+rust is also block scoped
+
 CARGO
     - cargo init (int he current dir)
     - cargo new name (new folder name)
     - cargo run (compile +run)
     - cargo build (just compile)
 
-- Position in print format, add number of the arg and display cool //check project
-- can do named //check project
+FORMATTING
+    - Position in print format, add number of the arg and display cool 
+    - can do named 
+    - trait to the output
+    - multiple data
+    //check print.rs
+
+VARS
+    - hold data or ref to data
+    - immutable by default else add mut
+    - when using const, name convention caps, type def COMPULSORY
+
+TYPEs
+    - find max size of sumn //check project
+    - bool expressions can be evaled and stored //check project
+    - chars can use both "" or '' or ``
+    - chars can use unicode emojis too //check project
