@@ -27,3 +27,15 @@ TYPEs
     - bool expressions can be evaled and stored //check project
     - chars can use both "" or '' or ``
     - chars can use unicode emojis too //check project
+
+
+STR vs STRING
+    - STR : immutable
+    - STRING : growable head allocated
+        .push for char with '' only
+        .push_str for string "" only 
+        more funstions... //check project
+    - COMPULSION to write a `char` literal, use single quotes
+
+
+
