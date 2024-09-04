@@ -37,5 +37,7 @@ STR vs STRING
         more funstions... //check project
     - COMPULSION to write a `char` literal, use single quotes
 
+TUPLES
+    - group of vals, max 12
 
 
