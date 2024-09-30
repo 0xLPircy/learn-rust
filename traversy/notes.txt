@@ -40,4 +40,9 @@ STR vs STRING
 TUPLES
     - group of vals, max 12
 
-
+ARRAYS
+    - limited size
+    - let numbers: [i32; 5] = [1,2,3,4,5];
+        [type; size]
+    - if you define as size 5, you need to gve 5, less or more causes err
+    - 0th index
