@@ -46,3 +46,6 @@ ARRAYS
         [type; size]
     - if you define as size 5, you need to gve 5, less or more causes err
     - 0th index
+
+VECTOR 
+    - resizable array
